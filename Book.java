@@ -753,21 +753,28 @@ public class Book extends javax.swing.JFrame implements Search {
     }//GEN-LAST:event_jTextField20ActionPerformed
 
      
-    
+   
     
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        
-        if (jComboBox1.getSelectedIndex() == 0) {
-            String [] list = new String [people.size()] ;
-            for (int i = 0 ;  i < list.length ; i++ ) 
-                list[i] = people.get(i).getInfo() ; 
-            
+        if (jComboBox1.getSelectedIndex() == 0){
+            String [] list = new String [Person.personNumber] ; 
+            int j = 0 ; 
+            for (int i = 0 ; i < book.size() ; i++ ) 
+                if (Person.class == book.get(i).getClass())
+                    list[j++] = book.get(i).getTitle() ; 
+            jList1.setListData(list);
+        }
+        else {
+            String [] list = new String [Business.businessNumber] ; 
+            int j = 0 ; 
+            for (int i = 0 ; i < book.size() ; i++ ) 
+                if (Business.class == book.get(i).getClass())
+                    list[j++] = book.get(i).getTitle() ; 
             jList1.setListData(list);
             
+                    
         }
-            
-               
             
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -791,13 +798,24 @@ public class Book extends javax.swing.JFrame implements Search {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+  
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
             // TODO add your handling code here:
             String title = jList1.getSelectedValue() ;
              
             Page page = getPageSearch(title) ;
-            book.remove(page) ; 
+            
+            book.remove(page) 
+                    ; 
+            Page.pageNumber -- ; 
+            
+            if (page.getClass() == Person.class)
+                Person.personNumber -- ; 
+            else 
+                Business.businessNumber -- ; 
+            
+           
             displayAllOnList() ;
             
         } catch (PageNotFoundException ex) {

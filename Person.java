@@ -6,18 +6,20 @@ public class Person extends Page {
 	private Address address ; 
 	private Date date ; 
 	
-
+        public static int personNumber = 0  ; 
 	public Person(Contact contact, Address address, Date date) {
 		super();
 		this.contact = (ContactPerson) contact;
 		this.address = address;
 		this.date = date;
 		pageNumber++  ;
+                personNumber ++ ; 
 	}
 
 	public Person() {
 		super();
 		pageNumber ++ ; 
+                personNumber ++ ; 
 		// TODO Auto-generated constructor stub
 	}
 
@@ -25,6 +27,7 @@ public class Person extends Page {
 		super();
 		this.contact = contact;
 		pageNumber ++ ; 
+                personNumber ++  ; 
 	}
 
 	@Override

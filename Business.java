@@ -8,6 +8,7 @@ public class Business extends Page {
 	private Address address ; 
 	private ContactPerson contactPerson ;
 	
+        public static int businessNumber = 0 ; 
 	
 	
 	public Business(String title, String genre, Contact contactBusiness, Address address,
@@ -19,12 +20,14 @@ public class Business extends Page {
 		this.address = address;
 		this.contactPerson = (ContactPerson) contactPerson;
 		pageNumber++ ; 
+                businessNumber ++ ; 
 	}
 	
 	
 	public Business() {
 		super();
 		pageNumber ++ ; 
+                businessNumber ++ ; 
 	}
 
 	
