@@ -6,8 +6,6 @@
 package addressBookk;
 
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -843,6 +841,10 @@ public class Book extends javax.swing.JFrame implements Search {
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         // TODO add your handling code here:
         
+        sortingArrayList() ; 
+        
+        displayAllOnList() ; 
+        
     }//GEN-LAST:event_jButton7ActionPerformed
 
     
@@ -874,10 +876,8 @@ public class Book extends javax.swing.JFrame implements Search {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Book().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Book().setVisible(true);
         });
     }
     
@@ -1021,16 +1021,48 @@ public class Book extends javax.swing.JFrame implements Search {
     
     public void sortingArrayList () { 
         
-        ArrayList sortBook = new ArrayList <>() ; 
+        ArrayList <Page> sortBook = new ArrayList <>() ; 
         String [] list = ConvertArrayListToStaticArray() ;  // Insert the titles of members in ArrayList to Static Array  
         
         ConvertFullNamesToLastNames(list) ; // Conver the Full name of every person in the list to last Name 
         
-        for (int i = 0 ; i < 
+        sortList(list) ; // sort the items alphabetically after edit people names ; 
+        
+        for (int i = 0 ; i < book.size() ; i++ ) {
+            try {
+                   
+                    sortBook.add(getPageSearch(list[i])); // if the selected item is Business class , then add to sortBook directly
+                }
+            catch (PageNotFoundException ex) {        try {
+                // exception will occur if the class is person , becasue is does not have full title to get the object
+                sortBook.add(getPersonByLastName(list[i]));
+                } catch (PersonNotFoundException ex1) {
+                    JOptionPane.showMessageDialog(null, ex1.getMessage()); // if the person not found , then there is an error 
+                }
+            }
+            
+        
+            
         
         
         
         
     }
+        
+        
+       book.clear(); 
+       InsertArrayList(sortBook) ; 
+       
+    
+    }
+    
+    public void InsertArrayList (ArrayList <Page> arr) { 
+        for (int i = 0 ; i < arr.size() ; i++ ) 
+            book.add(arr.get(i)) ; 
+        
+    }
+    
+    
+       
     
 }
