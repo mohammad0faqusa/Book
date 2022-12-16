@@ -16,6 +16,7 @@ public class Person extends Page {
                 personNumber ++ ; 
 	}
 
+        
 	public Person() {
 		super();
 		pageNumber ++ ; 
@@ -31,7 +32,7 @@ public class Person extends Page {
 	}
 
 	@Override
-	public Contact getContact() {
+	public ContactPerson getContact() {
 		// TODO Auto-generated method stub
 		return (ContactPerson) contact ;
 		

@@ -470,6 +470,11 @@ public class Book extends javax.swing.JFrame implements Search {
         });
 
         jButton7.setText("Sort Alphabatically ");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -835,6 +840,11 @@ public class Book extends javax.swing.JFrame implements Search {
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton7ActionPerformed
+
     
     /**
      * @param args the command line arguments
@@ -955,9 +965,72 @@ public class Book extends javax.swing.JFrame implements Search {
         
 
     }
-   
+    
+    public String []  ConvertArrayListToStaticArray (){ 
+        String [] list = new String [book.size()]  ; 
+        
+        
+        for (int i = 0 ; i < book.size() ; i++ ) 
+            list[i] = book.get(i).getTitle() ; 
+        
+        return list ; 
+    } 
+    
+    
+    
+    public String [] ConvertFullNamesToLastNames (String [] list ) { 
+        Person tperson ; 
+  
+        for (int i = 0 ; i < book.size() ; i++ ) 
+            if (book.get(i).getClass() == Person.class) {
+                tperson = (Person) book.get(i) ; 
+                list[i] = tperson.getContact().getSecondName() ; 
+                
+            }
+    
+        return list ;
+    }
+  
+    public void sortList (String [] list) {
+        
+        java.util.Arrays.sort(list);
+        
+    }
 
+    public Person getPersonByLastName (String lastName  ) throws PersonNotFoundException {
+        
+        Person tperson ; 
+        
+        for (int i = 0 ; i < book.size() ; i++ ) 
+            if (book.get(i).getClass() == Person.class) {
+                tperson = (Person) book.get(i) ;
+                if (tperson.getContact().getSecondName().equals(lastName))
+                    return tperson ; 
+                
+        
    
+    }
+    
+    throw new PersonNotFoundException ("The objective Perosn is not found ! ") ; 
    
+    
+}
+    
+    
+    
+    
+    public void sortingArrayList () { 
+        
+        ArrayList sortBook = new ArrayList <>() ; 
+        String [] list = ConvertArrayListToStaticArray() ;  // Insert the titles of members in ArrayList to Static Array  
+        
+        ConvertFullNamesToLastNames(list) ; // Conver the Full name of every person in the list to last Name 
+        
+        for (int i = 0 ; i < 
+        
+        
+        
+        
+    }
     
 }

@@ -81,7 +81,7 @@ public class Business extends Page {
 
 
 	@Override
-	public Contact getContact() {
+	public ContactBusiness getContact() {
 		// TODO Auto-generated method stub
 		return contactBusiness;
 	}
