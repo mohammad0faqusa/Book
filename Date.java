@@ -31,8 +31,11 @@ public class Date {
 	}
 	
 	public String getInfo() {
-		return "Date [day=" + day + ", month=" + month + ", year=" + year + "]";
+		return "Date [day="  + day + ", month=" + month + ", year=" + year + "]";
 	} 
 	
+   
+        
+        
 	
 }

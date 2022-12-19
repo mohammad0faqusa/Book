@@ -17,6 +17,7 @@ public class Person extends Page {
 	}
 
         
+        
 	public Person() {
 		super();
 		pageNumber ++ ; 
@@ -31,12 +32,32 @@ public class Person extends Page {
                 personNumber ++  ; 
 	}
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+        
+        
+
 	@Override
 	public ContactPerson getContact() {
 		// TODO Auto-generated method stub
 		return (ContactPerson) contact ;
 		
 	}
+        
+        
 
 	@Override
 	public void setContact(Contact contact) {
@@ -64,5 +85,8 @@ public class Person extends Page {
 		// TODO Auto-generated method stub
 		return "Person " + contact.getInfo() + address.getInfo() + date.getInfo() ;
 	}
+
+    
+    
 	
 }

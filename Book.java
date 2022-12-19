@@ -6,6 +6,8 @@
 package addressBookk;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -88,15 +90,17 @@ public class Book extends javax.swing.JFrame implements Search {
         jButton6 = new javax.swing.JButton();
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
-        jInternalFrame1 = new javax.swing.JInternalFrame();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel19 = new javax.swing.JLabel();
         jTextField19 = new javax.swing.JTextField();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
         jLayeredPane1 = new javax.swing.JLayeredPane();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jTextField21 = new javax.swing.JTextField();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jButton9 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList2 = new javax.swing.JList<>();
 
@@ -227,7 +231,7 @@ public class Book extends javax.swing.JFrame implements Search {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(248, 248, 248)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -395,7 +399,7 @@ public class Book extends javax.swing.JFrame implements Search {
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(248, 248, 248)
                         .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(224, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -486,22 +490,6 @@ public class Book extends javax.swing.JFrame implements Search {
             }
         });
 
-        jInternalFrame1.setClosable(true);
-        jInternalFrame1.setIconifiable(true);
-        jInternalFrame1.setMaximizable(true);
-        jInternalFrame1.setVisible(true);
-
-        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
-        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
-        jInternalFrame1Layout.setHorizontalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 149, Short.MAX_VALUE)
-        );
-        jInternalFrame1Layout.setVerticalGroup(
-            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
-        );
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -523,9 +511,7 @@ public class Book extends javax.swing.JFrame implements Search {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(116, 116, 116)
                         .addComponent(jButton7)))
-                .addGap(17, 17, 17)
-                .addComponent(jInternalFrame1)
-                .addContainerGap())
+                .addContainerGap(161, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -533,21 +519,17 @@ public class Book extends javax.swing.JFrame implements Search {
                 .addGap(24, 24, 24)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButton1)
-                            .addComponent(jButton2))
-                        .addGap(49, 49, 49)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton6)
-                            .addComponent(jButton8))
-                        .addGap(15, 15, 15)
-                        .addComponent(jButton7)
-                        .addGap(0, 101, Short.MAX_VALUE))
-                    .addComponent(jInternalFrame1))
-                .addContainerGap())
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton2))
+                .addGap(49, 49, 49)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton6)
+                    .addComponent(jButton8))
+                .addGap(15, 15, 15)
+                .addComponent(jButton7)
+                .addContainerGap(114, Short.MAX_VALUE))
         );
 
         jTabbedPane4.addTab("tab1", jPanel4);
@@ -576,8 +558,6 @@ public class Book extends javax.swing.JFrame implements Search {
 
         jButton4.setText("Remove ");
 
-        jButton5.setText("Show Info");
-
         javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
         jLayeredPane1.setLayout(jLayeredPane1Layout);
         jLayeredPane1Layout.setHorizontalGroup(
@@ -589,28 +569,54 @@ public class Book extends javax.swing.JFrame implements Search {
             .addGap(0, 459, Short.MAX_VALUE)
         );
 
+        jComboBox2.setEnabled(false);
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+
+        jTextField21.setEnabled(false);
+
+        jComboBox3.setEnabled(false);
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+
+        jButton9.setText("Apply Edit");
+        jButton9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton9ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(135, 135, 135)
+                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createSequentialGroup()
+                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(52, 52, 52)
+                                .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jButton9))
+                        .addGap(189, 189, 189)
+                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jLabel19))
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField19, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jButton3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton5))
-                            .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addGap(485, 485, 485)
-                                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton4)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
@@ -623,10 +629,19 @@ public class Book extends javax.swing.JFrame implements Search {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLayeredPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jTextField21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton9)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -637,10 +652,10 @@ public class Book extends javax.swing.JFrame implements Search {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -648,7 +663,7 @@ public class Book extends javax.swing.JFrame implements Search {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 455, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(63, 63, 63)
+                .addGap(60, 60, 60)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -659,7 +674,10 @@ public class Book extends javax.swing.JFrame implements Search {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addGap(35, 35, 35))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -915,12 +933,16 @@ public class Book extends javax.swing.JFrame implements Search {
         
         displayAllOnList() ; 
         
+       
+        
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         // TODO add your handling code here:
         
         displayAllOnList() ; 
+        
+        
     }//GEN-LAST:event_jButton8ActionPerformed
 
     private void jTextField19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField19ActionPerformed
@@ -954,11 +976,110 @@ public class Book extends javax.swing.JFrame implements Search {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        try {
+        if (getPageSearch(jList2.getSelectedValue()) instanceof Person) {
+            jComboBox2.setEnabled(true);
+            jComboBox2.addItem("First Name");
+            jComboBox2.addItem("Second Name") ;
+            jComboBox2.addItem("Address") ; 
+            jComboBox2.addItem("Contact") ; 
+            jComboBox2.addItem("Date") ; 
+            
+        }
         
-        jTabbedPane1.setVisible(true);
+        else {
+            jComboBox2.setEnabled(true);
+            jComboBox2.addItem("Title") ; 
+            jComboBox2.addItem("Genre") ; 
+            jComboBox2.addItem("Address") ; 
+            jComboBox2.addItem("Contact") ;
+        }
+            
+        }
+        catch (PageNotFoundException ex) {
+            JOptionPane.showMessageDialog(null, "Please select an item from the list ");
+        }
+        
         
    
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        // TODO add your handling code here:
+        
+        // String [] listCombo = {"First Name" , "Second Name" , "Address" , "Contact" , "Date"} ; 
+        
+        int x  = jComboBox2.getSelectedIndex() ; 
+        
+        switch (x) { 
+            case 3 : jComboBox3.setEnabled(true);
+                     jComboBox3.addItem("Email");
+                     jComboBox3.addItem("PhoneNumber");
+                     jTextField21.setEnabled(true);
+                     break ; 
+                     
+            case 4 : jComboBox3.setEnabled(true);
+                     jComboBox3.addItem("Day");
+                     jComboBox3.addItem("Month");
+                     jComboBox3.addItem("Year");
+                     jTextField21.setEnabled(true);
+                     break ; 
+            
+            default : jTextField21.setEnabled(true);
+            
+        }
+        
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jButton9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton9ActionPerformed
+        try {
+            // TODO add your handling code here:
+            
+            // to apply an edit just to a person 
+            Person person = (Person) getPageSearch(jList2.getSelectedValue()) ;
+            book.remove(person) ; 
+            
+            if (jComboBox2.getSelectedIndex() == 0 ) 
+                person.getContact().setFirstName(jTextField21.getText());
+            else if (jComboBox2.getSelectedIndex() == 1) 
+                person.getContact().setSecondName(jTextField21.getText());
+            else if (jComboBox2.getSelectedIndex() == 2 || jComboBox3.getSelectedIndex() == 0 )
+                person.getAddress().setCountry(jTextField21.getText());
+            else if (jComboBox2.getSelectedIndex() == 2 || jComboBox3.getSelectedIndex() == 1)
+                person.getAddress().setPostalCode(jTextField21.getText());
+            else if (jComboBox2.getSelectedIndex() == 3 || jComboBox3.getSelectedIndex() == 0)
+                person.getContact().setEmail(jTextField21.getText());
+            else if (jComboBox2.getSelectedIndex() == 3 || jComboBox3.getSelectedIndex() == 1)
+                person.getContact().setTelephoneNumber(Integer.parseInt(jTextField21.getText()));
+            else if (jComboBox2.getSelectedIndex() == 4 || jComboBox3.getSelectedIndex() == 0)
+                person.getDate().setDay(Integer.parseInt(jTextField21.getText()));
+            else if (jComboBox2.getSelectedIndex() == 4 || jComboBox3.getSelectedIndex() == 1)
+                person.getDate().setMonth(Integer.parseInt(jTextField21.getText()));
+            else if (jComboBox2.getSelectedIndex() == 4 || jComboBox3.getSelectedIndex() == 2)
+                person.getDate().setYear(Integer.parseInt(jTextField21.getText()));   
+            
+            book.add(person) ; 
+            displayAllOnList() ; 
+            
+            jComboBox2.removeAll(); 
+            jComboBox3.removeAll();
+            jComboBox2.setEnabled(false);
+            jComboBox3.setEnabled(false);
+            
+            
+        } catch (PageNotFoundException ex) {
+            JOptionPane.showMessageDialog(null , "Please select a person");
+            
+        }
+        
+            
+    }//GEN-LAST:event_jButton9ActionPerformed
 
     
     /**
@@ -1003,12 +1124,13 @@ public class Book extends javax.swing.JFrame implements Search {
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
+    private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JInternalFrame jInternalFrame1;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1057,6 +1179,7 @@ public class Book extends javax.swing.JFrame implements Search {
     private javax.swing.JTextField jTextField19;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField20;
+    private javax.swing.JTextField jTextField21;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JTextField jTextField5;
@@ -1188,6 +1311,15 @@ public class Book extends javax.swing.JFrame implements Search {
             list[i] = dynamic.get(i) ; 
         
         return list ; 
+        
+    }
+    
+    public void insertPersonDate (String  [] dataList , Person person ) { 
+        
+        person.setContact(new ContactPerson (dataList[0], Integer.parseInt(dataList[1]) , dataList[2] , dataList[3] ));
+        person.setAddress (new Address (dataList[4] , dataList[5] , dataList[6])) ; 
+        person.setDate ( new Date (Integer.parseInt(dataList[7]) , Integer.parseInt(dataList[8]) , Integer.parseInt(dataList[9]))) ; 
+        
         
     }
     

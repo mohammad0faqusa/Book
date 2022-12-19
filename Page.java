@@ -6,7 +6,7 @@ public abstract class Page {
 	public abstract Contact getContact() ; 
 	public abstract void setContact(Contact contact) ; 
 	
-	public abstract String getTitle () ; 
+	public abstract  String getTitle () ; 
 	public abstract void setTitle (String title) ; 
 	
 	public abstract  String getInfo () ; 
